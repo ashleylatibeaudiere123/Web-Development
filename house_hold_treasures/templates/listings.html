@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Listings
+{% endblock %}
+
+ {% block heading %}
+    Listings
+ {% endblock %}
+
+{% block content %}
+<table style="width: 100%">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Condition</th>
+            <th>Price</th>
+            <th>Mark as Sold? </th>
+
+        </tr>
+    </thead>
+    {% for item in listed_items %}
+    <tr>
+        <td>{{item.item}}</td>
+        <td>{{item.condition}}</td>
+        <td> ${{item.price}}</td>
+        <td><button type="submit" class="btn btn-primary" data-item ={{item.item_id}}> Sold</button></td>
+
+    </tr>
+    {% endfor %}
+
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+
+                let buttons = document.querySelectorAll(".btn.btn-primary");
+                console.log(buttons)
+                buttons.forEach((button) => {
+                    button.addEventListener('click', function(event) {
+
+                        id = event.target.getAttribute("data-item");
+                        console.log(id);
+                        fetch('/listings', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ item_id: id })
+                            });
+                            location.reload();
+                        });
+                    });
+            });
+
+        </script>
+
+{% endblock %}
+
+
+

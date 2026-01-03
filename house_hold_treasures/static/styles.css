@@ -1,0 +1,96 @@
+body{
+
+    text-align:center
+
+}
+
+.nav-item{
+    margin-right:20px;
+}
+
+.nav-item right{
+    text-align:right;
+}
+
+.card-img-top{
+    height: 256px;
+    object-fit: contain;
+    padding-bottom: 0px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 256px;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: white;
+    padding: 10px;
+
+}
+.card-text {
+    font-size: 14px;
+}
+.card-container > div {
+    background-color:#f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+}
+.end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height:200px;
+
+}
+
+.input-group.custom-width{
+    width: 400px !important;
+    }
+
+
+.custom-button{
+    margin-left: -10px;
+}
+
+textarea::placeholder {
+    opacity: 1;
+}
+
+textarea:focus::placeholder{
+    opacity: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;  /* Align items horizontally */
+}
+
+.col-auto {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.err-message {
+
+    line-height: 175px;
+}

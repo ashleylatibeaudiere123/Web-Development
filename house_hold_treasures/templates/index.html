@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+ {% block heading %}
+    Items
+ {% endblock %}
+
+{% block content %}
+<!--- Add search bar--->
+<input autocomplete="off" autofocus placeholder="Search here" type="search">
+
+<!-- Cards-->
+<div class= "card-container">
+    {% for item in items %}
+
+            <div class = "card" style="width:18rem; margin:10px;">
+
+                {% set first_image = item.files.split(',')[0] %}
+                <img src="{{url_for('static', filename= first_image)}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title" style="display:flex; flex-direction:column; justify-content:center">{{item.item}}</h3>
+                    <p class="card-text">{{item.description}}</p>
+                <div class="end">
+                    <a data-item={{item.item_id}} class="btn btn-primary"> ${{item.price}}</a>
+                </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+        <!-- Change cards based on search results and redirect to item page when button is clicked; written with the help of cs50 debugger and chatopenai-->
+        <script>
+
+            let input = document.querySelector('input');
+            input.addEventListener('input', async function(){
+                let response = await fetch('/search?q=' + input.value);
+                let qitems = await response.text();
+                document.querySelector('.card-container').innerHTML = qitems;
+            } );
+
+            let buttons = document.querySelectorAll('.btn.btn-primary');
+            buttons.forEach((item) =>{
+                item.addEventListener('click', function(event){
+                q = event.target.getAttribute("data-item");
+                let url = `https://curly-space-journey-5gx9xgx4rj5vf75q5-5000.app.github.dev/itemsearch?q=${q}`;
+                window.location.href = url; }
+            )});
+        </script>
+
+{% endblock %}

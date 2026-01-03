@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+ {% block heading %}
+    Register
+ {% endblock %}
+
+{% block content %}
+            <form action ="/register" method = "post">
+                <div class="mb-3">
+                    <input autocomplete ="off" class="form-control mx-auto w-auto" autofocus name = "username" placeholder ="Username" type = "text">
+                </div>
+                <div class="mb-3">
+                    <input autocomplete ="off" class="form-control mx-auto w-auto" autofocus name = "email" placeholder ="Email" type = "text">
+                </div>
+                <div class ="mb-3">
+                    <input class = "password form-control mx-auto w-auto"autocomplete = "off" autofocus name ="password" placeholder ="Password" type = "password">
+                </div>
+                <div class ="mb-3">
+                    <input class = "password form-control mx-auto w-auto"autocomplete ="off" autofocus name = "confirmation" placeholder ="Confirmation" type = "password">
+                </div>
+                    <input id = "checkbox" type="checkbox" name = "showpassword" > Show Password
+                <button type = "submit" class= "btn btn-primary"> Submit </button>
+            </form>
+
+        </div>
+        <script>
+                let passwords = document.querySelectorAll(".password")
+                document.querySelector('input[name="showpassword"]').addEventListener('click', function()
+                {
+                    for (let password of passwords)
+                    {
+                        if (password.type ==="password")
+                        {
+                            password.type = "text";
+                        }
+                        else
+                        {
+                            password.type ="password";
+                        }
+                    }
+                }
+            )
+
+        </script>
+
+{% endblock %}
+
+
+

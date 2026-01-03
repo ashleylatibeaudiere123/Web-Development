@@ -1,0 +1,15 @@
+{% for item in items %}
+
+<div class = "card" style="width:18rem; margin:10px;">
+
+    {% set first_image = item.files.split(',')[0] %}
+    <img src="{{url_for('static', filename= first_image)}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{item.item}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <a data-item={{item.item_id}} class="btn btn-primary"> ${{item.price}}</a>
+
+    </div>
+</div>
+{% endfor %}
+

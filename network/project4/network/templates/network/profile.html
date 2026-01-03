@@ -1,0 +1,65 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div class="userheading">
+    <h2>{{userobject.username}}</h2>
+    <div> # of followers: {{userobject.num_followers}} # following : {{userobject.num_following}} </div>
+</div>
+
+
+<div class="allposts">
+{% for post in page_obj %}
+    <div class="singlepost">
+        <div id="username">{{post.user.username}}</div>
+        <div id="postcontents">{{post.post}}</div>
+        <div id="editcontents"></div>
+        <div id = "date_time">{{post.date_time}}</div>
+        <div><span style="color:red">&hearts;</span> {{post.likes}}</div>
+        {% if user == post.user %}
+            <a href="#">Edit</a>
+        {% endif %}
+    </div>
+
+{% endfor %}
+</div>
+
+
+
+{% if user.is_authenticated  and foundfollower == 0 %}
+    <div class="followbutton">
+    <form method="POST">
+        {% csrf_token %}
+         <button type="submit" name="followbutton" value="follow">Follow</button>
+    </form>
+    </div>
+{% elif user.is_authenticated and foundfollower == 1 %}
+    <div class="followbutton">
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" name="followbutton" value="unfollow">Unfollow</button>
+    </form>
+    </div>
+{% else %}
+
+{% endif %}
+
+<nav aria-label = "Page navigation" >
+        <ul class="pagination" style="margin-top: 10px; justify-content:center;">
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+           <li class="page-item"><a class="page-link"href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+        {% endif %}
+        <li class="page-item active" >
+            <a class="page-link">Page {{page_obj.number}}</a>
+        </li>
+
+        {% if page_obj.has_next %}
+              <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a></li>
+              <li class="page-item"><a class="page-link" href="?page={{page_obj.paginator.num_pages}}">Last &raquo;</a></li>
+        {% endif %}
+        </ul>
+    </nav>
+
+
+
+{% endblock %}
