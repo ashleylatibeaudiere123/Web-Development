@@ -1,0 +1,28 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2>Active Listings</h2>
+    {% for listing in listings %}
+    <div class="listing">
+        <div class="column2">
+
+        </div>
+        <div class="column3">
+            <div class="item1"><h3>{{listing.title}}</h3></div>
+            <div class="item2" >Price:  ${{listing.highest_bid}}</div>
+            <div class="item4"> Description: {{listing.description}}</div>
+            <div class="item3" style="color: grey">Created {{listing.date_time}}</div>
+
+        </div>
+
+        <div id ="pic">
+           <a href="{% url 'listing' listing.id %}"><img src= "{{listing.url}}" alt="Listing image" style="width:300px; height: 250px;"></a>
+        </div>
+
+    </div>
+
+
+
+    {% endfor %}
+{% endblock %}
