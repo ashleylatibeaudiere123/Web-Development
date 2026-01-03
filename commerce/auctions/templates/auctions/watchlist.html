@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    {% for listing in watchlist %}
+        <div class="listing">
+            <div>
+                
+            </div>
+            <div class="column3">
+                <div > <h3>{{listing.listing_id.title}}</h3></div>
+                <div>Highest Bid:<strong> ${{listing.listing_id.highest_bid}}</strong></div>
+                <div>{{listing.listing_id.description}}</div>
+                <div>Seller: {{listing.listing_id.seller}}</div>
+                <div style="color: gray;">{{listing.listing_id.date_time}}</div>
+
+            </div>
+            <div id="pic">
+                <a href="{% url 'listing' listing.listing_id.id %}"><img src="{{listing.listing_id.url}}" alt="Listing Image" style="width:300px; height:250px;"></a>
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+{% endblock %}
