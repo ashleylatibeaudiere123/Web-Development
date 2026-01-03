@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+ {% block heading %}
+    Sell
+ {% endblock %}
+
+{% block content %}
+            <form action ="/sell" method = "post" enctype="multipart/form-data">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <input autocomplete ="off" class="form-control" autofocus name = "item" placeholder ="Item" type = "text">
+                        </div>
+                        <div class="col-auto">
+                            <select name="condition" class ="form-control">
+                                <option disabled selected value="">Condition</option>
+                            {% for condition in conditions %}
+                                <option value ="{{condition}}">{{condition}}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                        <div class ="col-auto" style="width:200px;">
+                                <input class = "form-control" autocomplete = "off" autofocus name ="price" placeholder ="price" type = "text">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <input autocomplete ="off" class="form-control mx-auto w-auto" autofocus name = "location" placeholder ="Location" type = "text">
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class ="input-group custom-width">
+                            <input type ="file" name = "files" class="form-control " id="multiplefiles" multiple style ="max-width: 300px;" >
+                            <button class="btn btn-outline-secondary custom-button" type="button" id="upload">Upload</button>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center" style="color:blue;">
+                        <ul id="file-list" style="list-style: none; padding: 0;"></ul>
+                    </div>
+
+                    <div class ="mb-3 w-50 mx-auto">
+                        <label for="description" class="form-label"> Description</label>
+                        <textarea class = "form-control" style="height: 100px; text-align: top;" autofocus autocomplete ="off" id ="description" name = "description" placeholder ="Description">
+
+                        </textarea>
+                    </div>
+                </div>
+
+                <button type = "submit" class= "btn btn-primary"> Submit </button>
+            </form>
+
+        <script>
+            let uploadfiles = document.querySelector("#multiplefiles");
+            let fileList = document.querySelector("#file-list");
+
+            document.querySelector("#upload").addEventListener('click', function()
+            {
+                fileList.innerHTML=""
+                let files = uploadfiles.files;
+                for (let i = 0; i < files.length; i++)
+                {
+                    let li = document.createElement("li");
+                    li.textContent= files[i].name
+                    fileList.appendChild(li);
+                }
+            })
+
+        </script>
+
+{% endblock %}

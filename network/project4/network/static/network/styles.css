@@ -1,0 +1,26 @@
+.newpost, .allposts {
+    margin-left: 30px;
+    border-style: ridge;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.singlepost{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px ridge #d3d3d3;
+}
+
+.date_time {
+    color:gray;
+}
+
+#username{
+    font-weight: bold;
+}
+
+.userheading, .followbutton {
+    text-align: center;
+    margin-top: 10px;
+}
+
