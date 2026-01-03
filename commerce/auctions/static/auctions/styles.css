@@ -1,0 +1,60 @@
+body {
+    padding: 10px;
+
+}
+
+.listing {
+    border: 1px solid gray;
+    margin: 10px;
+    display: grid;
+    height: 350px;
+    grid-template-columns: 300px 50px 250px;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+
+}
+
+.column3{
+    height: 350px;
+    align-content: center;
+}
+
+.column3 > div{
+    grid-column-start: 3;
+    height: 50px;
+}
+
+
+#pic{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    padding: 10px;
+
+}
+
+.show_listing{
+    display: flex;
+    align-items: center;
+    height: 534px;
+    flex-direction: column;
+
+}
+
+.show_listing .watchlist, h2, .desc{
+    margin: 10px;
+}
+.comments{
+    display: flex;
+    flex-direction: column;
+}
+
+.show_listing img{
+    width: 70%;
+}
+
+textarea{
+    height: 100px;
+    width: 50%;
+}

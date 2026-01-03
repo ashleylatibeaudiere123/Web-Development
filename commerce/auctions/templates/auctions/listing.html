@@ -1,0 +1,80 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+        {% if message %}
+           <span style="color:red;"> {{message}}</span>
+
+        {% endif %}
+        {% if listing.winner == user.username and close_listing == "Inactive" %}
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <h1><strong> Congratulations!! </strong></h1><br>
+                <h1>You won the bid for :<strong> {{listing.title}}</strong></h1>
+                </div>
+
+        {% elif listing.winner != user.username and close_listing == "Inactive"%}
+            <h1><strong>SOLD:</strong> {{listing.title}} </h1>
+        {% else %}
+            <h1>Listing: {{listing.title}} </h1>
+        {% endif %}
+
+        <div class="show_listing">
+            {% if close_listing == "Active" %}
+                {% if watchlist_query == None %}
+                    <div class="watchlist">
+                    <form method="POST">
+                    {% csrf_token %}
+                        <button style="margin-bottom: 25px;" type="submit" name="button_type" value="add"> Add to Watchlist</button> <br>
+                    </form>
+                    </div>
+                {% else %}
+                    <div class="watchlist">
+                    <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name = "button_type" value="remove"> Remove from Watchlist </button><br>
+                    </form>
+                    </div>
+                {% endif %}
+            {% endif %}
+        <img src="{{listing.url}}" alt="{{listing.title}}" style="width: 500px; height: 400px;">
+
+        <h2 > Highest bid: ${{listing.highest_bid}}</h2>
+        <div class="desc"> <strong>Description:</strong> {{listing.description}} </div>
+                {% if close_listing == "Active" %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="bid" placeholder="Bid" style="position: relative; z-index: 10;">
+                    <input type = "submit" name="button_type" value="Place Bid" style="position: relative; z-index: 999;">
+                </form>
+                {% endif %}
+        </div>
+        <div class="comments">
+            <div>
+            <p><h3> Comments: </h3></p>
+                {% for c in comment %}
+
+                    {{c.user}}
+                    {{c.comment}}
+                    {{c.date_time}}<br>
+
+                {% endfor %}
+            </div>
+            <div> <p><h3> Join the discussion: </h3></div></p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <textarea name ="new_comment" placeholder = "Comment"></textarea>
+                   <div><input type="submit" name="button_type" value="Post Comment" style="width: 150px;"> </div>
+                </form>
+                {% if close_listing == "Active" and show_end_button == True %}
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <div><h3>Satisfied with Highest Bid? </h3></div>
+                    <form method="POST">
+                    {% csrf_token %}
+                        <input type = "submit", name="button_type" value="Close Bid" style="width: 100px;"></div>
+                    </form>
+                {% endif %}
+            </form>
+
+        </div>
+
+
+{% endblock %}
