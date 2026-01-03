@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Item
+{% endblock %}
+
+ {% block heading %}
+    {{item.item}}
+ {% endblock %}
+
+{% block content %}
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                <div class="carousel-inner">
+                    {% for file in files %}
+                        {%  if loop.first %}
+                            <div class ="carousel-item active">
+                                <img class="d-block mx-auto" src="{{url_for('static', filename= file)}}" style="width: 100%; height: auto;max-height: 400px;object-fit: contain;" alt="First-slide">
+                            </div>
+                        {% else %}
+                            <div class ="carousel-item ">
+                            <img class="d-block img-fluid mx-auto" src="{{url_for('static', filename= file)}}" style="width: 100%; height: auto;max-height: 400px;object-fit: contain;" alt="Slide">
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% if files|length > 1 %}
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="caroursel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only" style ="color:blue">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="caroursel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only" style="color: blue">Next</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+
+    <p class="card-price"><strong> ${{item.price}}</strong></p>
+    <p class="card-text">{{item.description}}</p>
+    <p class="card-text"> Location: {{item.location}}</p>
+    <button id = "email" data-item={{item.item_id}} type= "submit"> Message seller </button>
+
+
+        <script>
+            let buttons = document.querySelectorAll('.sr-only');
+            let carouselElement = document.querySelector('.carousel');
+
+            // Check to see if carousel exists,then adds controls to prev and next
+            if (carouselElement) {
+
+                let carousel = new bootstrap.Carousel(carouselElement);
+                buttons.forEach((item) =>{
+                item.addEventListener('click', function(){
+                    if (item.classList.contains('carousel-control-next-icon'))
+                        {
+                            carousel.next();
+                        }
+                    else
+                    {
+                        carousel.prev();
+                    }
+                });
+            });
+        }
+
+         // Send email when reicipient clicks on email
+
+         let email = document.querySelector('#email');
+        email.addEventListener('click', function(event){
+            setTimeout(function(){
+                alert('Seller emailed');},1000);
+            let id = event.target.getAttribute("data-item");
+            console.log(id);
+            fetch('/email',
+                {method :'POST',
+                headers:{'Content-Type':'application/json',},
+                body: JSON.stringify({item_id : id})
+        });
+       });
+
+        </script>
+
+{% endblock %}
