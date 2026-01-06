@@ -3,7 +3,7 @@ Commerce is an online platform where users can post objects for auction and rece
 
 Video demo: https://youtu.be/wUlztl5O8XQ
 
-![Commerce screenshot](commerce\Auctions.png)
+![Commerce screenshot](Auctions.png)
 
 ## Specification
 Tech used: HTML, CSS, JavaScript, Django
