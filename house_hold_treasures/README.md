@@ -7,10 +7,9 @@
 
 #### Tech used: HTML, CSSS, Python, Javascript, Flask
 
-Household Treasures is a web application that allows users to sell and buy items. Upon accessing the site, users are redirected to login using their username and password. 
-If users do not have an account, they can register using the specified link. Checks are incorporated into the system to prevent missing or invalid data. After registering, information such as their username and hash of their password is stored in the htreasures database.
+Household Treasures is a web application that allows users to sell and buy items. Upon accessing the site, users are redirected to login using their username and password. If users do not have an account, they can register using the specified link. Missing or invalid data prompts an error message and reloading of the specific form. After registering, information such as their username and hash of their password is stored in the htreasures database.
 
-Users are then redirected to the homepage, which shows all the items posted by users on the platform. The name of the item, its picture, description and cost are shown as cards, implemented using Boostrap. Users can search for an item by scrolling or through using the search bar.  After clicking on the price, users are redirected to a specific item page. This page has the item’s name, a carousel showing all the pictures posted, its price and description. There is further a "message seller" button, which automatically sends an email to the seller asking for the availability of the item. The Buyer's email address is also listed as the sender, allowing both the buyer and seller to communicate and arrange a meeting.
+Users are then redirected to the homepage, which shows all the items posted by users on the platform. Each item is depicted using the Bootsrap feature, cards. Users can search for an item by scrolling or through using the search bar.  After clicking on the price, users are redirected to a specific item page, showing the item’s name, all pictures posted, its price and description. There is also a "message seller" button, which automatically sends an email to the seller asking for the availability of the item. The Buyer's email address is also listed as the sender, allowing both the buyer and seller to communicate and arrange a meeting.
 
 ![Listing](listing.png)
 
