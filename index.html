@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="portfolio.js"></script>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+       
+    </head>
+    <body>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active nav-link-custom" data-section="home" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-custom" data-bs-toggle ="tab" data-bs-target="#commerce" role="tab" data-section="commerce" href="#">Commerce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-custom" data-section="hhtreasures" href="#">Household Treasures</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-custom" data-section="mail" href="#">Mail</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-custom" data-section="network" href="#">Network</a>
+            </li>
+           
+        </ul>
+        <div id ="home" class="section">
+            <img style="position: absolute; left: 0px; top: 42px; z-index: -1; height: 100%; width: 100%" src="sabri-tuzcu-wunVFNvqhfE-unsplash_edit.jpg">
+            <div class="homecontent">
+                <h1 style="margin-top:30px; margin-bottom: 40px;text-align: center;">Welcome to my Portfolio!</h1>
+
+                <p> My name is Ashley Latibeaudiere and I am a psychology master's graduate with a strong foundation in statistics, Python, and JavaScript. </p>
+                <br>
+                <p> I have built many of the projects in this portfolio using either the Django or Flask web framework. With the exception of the mail application, I was the sole developer on each project. </p>
+                
+                
+            </div>
+            <h5 id="photocredit">Photo by Sabri Tuzcu on Unsplash</h5>
+             
+        </div>
+        <div id = "commerce" class="section">
+            <h1 >Commerce</h1>
+            <p>Commerce is an online platform where users can post objects for auction and receive bids on those items.</p>
+            <img class="main_img" src="commerce/Auctions.png">
+            
+            <div class="spec">
+                <h3>Specification</h3>
+                <hr width="100%" size="2">
+                
+                <p>
+                Users can create their own listings, view active listings, and post bids. 
+                In addition, they can add the item to their watchlist and post comments on the listing. 
+                Once the bidding process closes, the winner of the auction is notified after viewing the listing.</p>
+            </div> 
+            <div class="badges">
+                
+                <img class="badge" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt = "HTML5">
+                <img class="badge" src="https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white" alt="CSS">
+                <img class="badge" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+                <img class="badge" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
+                <img class="badge" src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+            
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wUlztl5O8XQ?si=nZ5yA3Dp8IHYM0ix" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            
+        </div>
+        <div id ="hhtreasures" class="section">
+            <h1 >Household Treasures</h1>
+            <p>Household Treasures is an online marketplace for buying and selling items.</p>
+            
+            <img class="main_img" src="house_hold_treasures/householdtreasures.png">
+            <div class="spec">
+                <h3>Specification</h3>
+                <hr width="100%" size="2">
+
+                    
+                <p>After logging in, users are redirected to the homepage, which shows all the items posted 
+                    by users on the platform. Users can search for items through scrolling or using the search
+                    bar. After clicking on a listing’s price, users are redirected to a specific item page, 
+                    where they can view all the item’s details and message the seller via email if desired. 
+                    The web application further allows users to post items and track all of their active listings.
+                </p>
+            </div>
+            <div class="badges">
+                
+                <img class="badge" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt = "HTML5">
+                <img class="badge" src="https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white" alt="CSS">
+                <img class="badge" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+                <img class="badge" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
+                <img class="badge" src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+            
+            </div>
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/50IirflhgTE?si=VwSnZhcKQV2UaGrv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+           
+            </div>
+        <div id="mail" class="section">
+            <h1 >Mail</h1>
+            <p> Mail is a single page application where users can send and receive email.</p>
+            
+            <img class="main_img" src="mail/Mail.png">
+
+            <div class="spec">
+            <h3>Specification</h3>
+            <hr width="100%" size="2">
+
+            <p>After signing in, users are redirected to their inbox, where ‘read’ emails appear white and unopened emails appear gray. 
+                Clicking on a specific email opens its contents while also allowing users to reply and/or archive 
+                an email. Users can also send their own emails to another registered user on the platform.</p> 
+            
+            <h3>Role</h3>
+            <hr width="100%" size="2">
+
+            <p>Developed the front-end aspect of the website and used Javascript to send API calls to web server.</p>
+            </div>
+            <div class="badges">
+                               
+                <img class="badge" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
+                
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/I2wBZTazk3Q?si=luqyj5mJ0F7eUJ7O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id ="network" class="section">
+            <h1 >Network</h1>
+            <p> Network is a text-based, social networking site.</p>
+
+            <img class="main_img" src="network/Network.png">
+            
+
+            <div class="spec">
+                <h3>Specification</h3>
+
+                <hr width="100%" size="2">
+                
+                            
+                <p>The homepage displays all posts created by users on the platform. After signing in, 
+                    users can create their own posts, like others’ posts, and edit their own content. 
+                    Users can also view both their own and others’ profile pages and choose to follow other 
+                    users.     </div>
+            <div class="badges">
+                
+                <img class="badge" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt = "HTML5">
+                <img class="badge" src="https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white" alt="CSS">
+                <img class="badge" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+                <img class="badge" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
+                <img class="badge" src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+            
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-q18ePdWiCY?si=s9rDzaJyqbAAaIcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        </div>    
+
+        <footer>
+           <div class="innerfooter">
+            <div >Ashley Latibeaudiere - Web Developer</div> 
+            <div >ashleylatibeaudiere123@gmail.com</div>
+           
+            
+            
+           <div  class="copyright">@ 2026 Ashley Latibeaudiere</div>
+
+           <a style="color:white;" href="compsci_Latibeaudiere_Ashley.pdf">Resume</a>
+           <a style="color: white;" href="https://github.com/ashleylatibeaudiere123/Web-Development.git">Github</a> 
+        </div>
+    </footer>
+    </body>
+
+</html>

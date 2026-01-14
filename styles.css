@@ -1,0 +1,84 @@
+
+
+.nav{
+    background-color: lightblue;
+    
+}
+.nav-link {
+    color: white;
+}
+
+#commerce, #hhtreasures, #mail, #network {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#home {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+.homecontent{
+    z-index: -1;
+    position: relative;
+    display: inline-block !important;
+    color: black;
+    text-align: center;
+    font-size: 4.5vh;
+}
+ .spec{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+ }
+
+.main_img {
+    margin-bottom: 25px;
+    width: 80%;
+}
+
+.badges{
+    display:inline-block !important;
+}
+.badge {
+    width:100px;
+    height: 60px;
+    display:inline-block !important;   
+
+}
+
+iframe{
+    margin-bottom: 50px;
+    margin-top: 50px; 
+}
+
+#photocredit{
+    font-weight: normal;
+    position: absolute;
+    bottom: -3vh;
+    right: 20px;
+    color: white;
+}
+
+footer{
+    padding: 2px;
+    background-color: lightblue;
+    height: 5vh;
+    display: block;
+    width: 100%;
+    
+}
+
+
+.innerfooter{
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+    color: white;
+    
+}
