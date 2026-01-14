@@ -9,7 +9,7 @@ Video demo: https://youtu.be/-q18ePdWiCY
 Tech used: HTML, CSS, Python, JavaScript and Django
 
 The homepage displays all posts created by users on the platform. After signing in, users can create their own posts, like others’ posts, and edit their own content. Users can view both their own and others’ profile pages and choose to follow other users. 
-[!Network profile](networkprofile.png)
+![Network profile](networkprofile.png)
 
 ## How to run application
 
