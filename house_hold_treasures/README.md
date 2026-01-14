@@ -9,21 +9,18 @@
 
 Household Treasures is a web application that allows users to sell and buy items. Upon accessing the site, users are redirected to login using their username and password. If users do not have an account, they can register using the specified link. Missing or invalid data prompts an error message and reloading of the specific form. After registering, information such as their username and hash of their password is stored in the htreasures database.
 
-Users are then redirected to the homepage, which shows all the items posted by users on the platform. Each item is depicted using the Bootsrap feature, cards. Users can search for an item by scrolling or through using the search bar.  After clicking on the price, users are redirected to a specific item page, showing the item’s name, all pictures posted, its price and description. There is also a "message seller" button, which automatically sends an email to the seller asking for the availability of the item. The Buyer's email address is also listed as the sender, allowing both the buyer and seller to communicate and arrange a meeting.
+Users are then redirected to the homepage, which shows all the items posted on the platform. They can search for an item by scrolling or using the search bar.  After clicking on the price, users are redirected to a specific item page, showing the item’s name, all pictures posted, its price and description. There is also a "message seller" button, which automatically sends an email to the seller asking for the availability of the item. 
 
 ![Listing](listing.png)
 
-
-The web application further allows sellers to post items, when clicking the sell hyperlink. Users are redirected to sell.html, where they fill out a form detailing the item, its condition, price, user's location, pictures and description. Pressing on 'choose files', opens a dialog box where users can select multiple pictures to upload, while clicking on upload shows the actual names of the files uploaded. Submitting this form, posts the information on the home page, index.html, and stores the information in a database htreasures.db. Items are given a unique primary key and the seller's id as well as all relevant information are stored in the database. Images submitted are resized to 256 by 256 and stored in a project directory. The file paths are stored in the database. Multiple file paths are merged in a string with the separator as a comma.
+The web application further allows sellers to post items and keep track of all their active lisings.
 
 ![Sell form](sell.png)
-
-Furthermore, users can see a table of their listings by clicking the link on the navigation bar. They are redirected to lisitings.html, which shows every item listed in a table with their respective condition and price. There is also a button for each item marked 'sold', which sends the item id to the listing route, which then deletes the item from the database and from the homepage.
 
 ![Seller's listing](seller_listings.png)
 
 
-There are several files responsible for the design and workings of the web application. The layout html provides the blueprint for the website, entailing a navigation bar, modifiable titles, headings and code sections. There are also links referring to the CSS and Bootstrap style sheets and code, which allows the website to be properly sized on mobile devices. The styles.css file has code pertaining to designing the overall layout, aligning the content in the cards and its container as well as organizing the various input fields listed on the sell page.The app.py file contains all the code for each route. It further specifies the packages to import and how to configure flask as well as the email system. Helpers.py depict the code for the login-required function, while the requirements.txt file lists the required programming packages.
+There are several files responsible for the design and workings of the web application. The layout.html provides the blueprint for the website, while the app.py file contains all the code that processes the data for each route. Helpers.py depict the code for the login-required function, while the requirements.txt file lists the required programming packages.
 
 ## How to run application
 
